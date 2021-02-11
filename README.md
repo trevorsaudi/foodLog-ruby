@@ -1,17 +1,24 @@
-# FOODLOG RUBY
-- A ruby on rails application that keeps track of food
+# README
 
-# Running the project
-- cd into the project folder foodlog
-```
-rails s 
-```
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-# Generating a model
-- generate a model that represent a table in the database, and the columns which are the fields in the database
-- rails uses a domain specific language that directly interacts with the database
+Things you may want to cover:
 
-```
-rails g scaffold Entry meal_type:string calories:integer proteins:integer carbohydrates:integer fats:integer
-rails db:migrate
-```
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
