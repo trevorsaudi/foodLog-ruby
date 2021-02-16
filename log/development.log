@@ -1175,3 +1175,948 @@ Processing by EntriesController#index as HTML
 Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.2ms)
 
 
+Started DELETE "/entries/2" for 127.0.0.1 at 2021-02-11 12:50:16 +0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/web_console/middleware.rb:135
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OZw8Uk3BLilvdX/IaAgFTBDHWsGO9M0B29uXCvGj+t9bVi6LVBqejzPb/EI0zutXd74vQPo3cuc6wVEr3CNNVg==", "id"=>"2"}
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:57
+  [1m[36mEntry Destroy (0.2ms)[0m  [1m[31mDELETE FROM "entries" WHERE "entries"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/entries_controller.rb:57
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:57
+Redirected to http://localhost:3000/entries
+Completed 302 Found in 30ms (ActiveRecord: 11.6ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2021-02-11 12:50:16 +0300
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:8
+  Rendered entries/index.html.erb within layouts/application (4.5ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 128ms (Views: 127.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2021-02-11 12:50:20 +0300
+Processing by EntriesController#new as HTML
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/_form.html.erb (7.8ms)
+  Rendered entries/new.html.erb within layouts/application (9.4ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/entries" for 127.0.0.1 at 2021-02-11 12:50:32 +0300
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4DJqqhOIgBxyqZA78f6qw+lTYcZwuxQDB480MDYVucBSttzsZWSpi1kJcqzARSwaNw4Bm0BU7btBPrx7Vjhbg==", "entry"=>{"meal_type"=>"Lunch ", "calories"=>"210", "proteins"=>"100", "carbohydrates"=>"110", "fats"=>"40"}, "commit"=>"Create Entry"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:30
+  [1m[36mEntry Create (0.6ms)[0m  [1m[32mINSERT INTO "entries" ("meal_type", "calories", "proteins", "carbohydrates", "fats", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["meal_type", "Lunch "], ["calories", 210], ["proteins", 100], ["carbohydrates", 110], ["fats", 40], ["created_at", "2021-02-11 09:50:32.942259"], ["updated_at", "2021-02-11 09:50:32.942259"]]
+  ↳ app/controllers/entries_controller.rb:30
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:30
+Redirected to http://localhost:3000/entries/3
+Completed 302 Found in 24ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/entries/3" for 127.0.0.1 at 2021-02-11 12:50:32 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (0.7ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2021-02-11 12:50:34 +0300
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:8
+  Rendered entries/index.html.erb within layouts/application (6.1ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-02-12 10:16:59 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/web_console/middleware.rb:135
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:8
+  Rendered entries/index.html.erb within layouts/application (9.9ms)
+  Rendered shared/_header.html.erb (0.4ms)
+Completed 200 OK in 128ms (Views: 121.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:17:04 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (1.8ms)
+  Rendered shared/_header.html.erb (0.7ms)
+Completed 200 OK in 35ms (Views: 26.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:17:36 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (1.0ms)
+  Rendered shared/_header.html.erb (0.8ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:17:48 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (2.4ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 32ms (Views: 27.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:19:33 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (0.7ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:26:12 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (2.5ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 34ms (Views: 29.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:29:48 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/web_console/middleware.rb:135
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (0.9ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 125ms (Views: 113.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries/1/edit" for 127.0.0.1 at 2021-02-12 10:29:50 +0300
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/edit.html.erb within layouts/application
+  Rendered entries/_form.html.erb (10.1ms)
+  Rendered entries/edit.html.erb within layouts/application (11.9ms)
+  Rendered shared/_header.html.erb (0.7ms)
+Completed 200 OK in 32ms (Views: 27.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:30:15 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (1.2ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:30:25 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (3.5ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 36ms (Views: 29.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:33:56 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/saudi/Desktop/Projects/foodLog-ruby/app/views/entries/show.html.erb:38: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+...e? "}, class :"button is-gray") 
+...                              ^
+/home/saudi/Desktop/Projects/foodLog-ruby/app/views/entries/show.html.erb:45: syntax error, unexpected `ensure', expecting ')'
+          ensure
+          ^~~~~~
+/home/saudi/Desktop/Projects/foodLog-ruby/app/views/entries/show.html.erb:47: syntax error, unexpected `end', expecting ')'
+          end
+          ^~~
+):
+  
+app/views/entries/show.html.erb:38: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/entries/show.html.erb:45: syntax error, unexpected `ensure', expecting ')'
+app/views/entries/show.html.erb:47: syntax error, unexpected `end', expecting ')'
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:34:16 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/saudi/Desktop/Projects/foodLog-ruby/app/views/entries/show.html.erb:38: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+/home/saudi/Desktop/Projects/foodLog-ruby/app/views/entries/show.html.erb:45: syntax error, unexpected `ensure', expecting ')'
+          ensure
+          ^~~~~~
+/home/saudi/Desktop/Projects/foodLog-ruby/app/views/entries/show.html.erb:47: syntax error, unexpected `end', expecting ')'
+          end
+          ^~~
+):
+  
+app/views/entries/show.html.erb:38: syntax error, unexpected '\n', expecting '.' or &. or :: or '['
+app/views/entries/show.html.erb:45: syntax error, unexpected `ensure', expecting ')'
+app/views/entries/show.html.erb:47: syntax error, unexpected `end', expecting ')'
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:35:02 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/saudi/Desktop/Projects/foodLog-ruby/app/views/entries/show.html.erb:38: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+...? "}, class :"button is-gray" );@output_buffer.safe_append='
+...                              ^
+/home/saudi/Desktop/Projects/foodLog-ruby/app/views/entries/show.html.erb:46: syntax error, unexpected `ensure', expecting ')'
+          ensure
+          ^~~~~~
+/home/saudi/Desktop/Projects/foodLog-ruby/app/views/entries/show.html.erb:48: syntax error, unexpected `end', expecting ')'
+          end
+          ^~~
+):
+  
+app/views/entries/show.html.erb:38: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/entries/show.html.erb:46: syntax error, unexpected `ensure', expecting ')'
+app/views/entries/show.html.erb:48: syntax error, unexpected `end', expecting ')'
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:38:12 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (2.8ms)
+  Rendered shared/_header.html.erb (0.7ms)
+Completed 200 OK in 37ms (Views: 32.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:38:24 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (3.1ms)
+  Rendered shared/_header.html.erb (0.8ms)
+Completed 200 OK in 37ms (Views: 32.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:38:38 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (3.7ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:38:48 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (3.5ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:38:53 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (1.2ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:38:58 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (1.2ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:39:06 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (114.3ms)
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x00007fe11c739858>:0x00007fe11cf8fb88>):
+    35: <div class="columns is-mobile">
+    36: <div class="column">
+    37: <%= link_to 'Edit', edit_entry_path(@entry), class:"button is-gray" %>
+    38: <%= link_to 'Delete', entry_path(@entry), method: delete, class: "button is-gray" %>
+    39: </div>
+    40: <div class="column">
+    41: </div>
+  
+app/views/entries/show.html.erb:38:in `_app_views_entries_show_html_erb___1346248066169988963_17080'
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:39:13 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (1.6ms)
+  Rendered shared/_header.html.erb (0.7ms)
+Completed 200 OK in 22ms (Views: 19.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entries/1" for 127.0.0.1 at 2021-02-12 10:40:20 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (2.4ms)
+  Rendered shared/_header.html.erb (0.8ms)
+Completed 200 OK in 28ms (Views: 22.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/entries/1" for 127.0.0.1 at 2021-02-12 10:40:22 +0300
+Processing by EntriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"312GJpXOuwC4tX0eU2hcItk7nUe8QVyAQTuubS5RaiN+jifkGhfAqTU6XG7iKegf39sSoTsNvfAd4r4S2G2fUA==", "id"=>"1"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:57
+  [1m[36mEntry Destroy (0.2ms)[0m  [1m[31mDELETE FROM "entries" WHERE "entries"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/entries_controller.rb:57
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:57
+Redirected to http://localhost:3000/entries
+Completed 302 Found in 15ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2021-02-12 10:40:22 +0300
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:8
+  Rendered entries/index.html.erb within layouts/application (1.6ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2021-02-12 10:40:47 +0300
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:8
+  Rendered entries/index.html.erb within layouts/application (2.8ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2021-02-12 15:22:46 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/web_console/middleware.rb:135
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:8
+  Rendered entries/index.html.erb within layouts/application (9.7ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 182ms (Views: 173.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-12 15:22:48 +0300
+Processing by ArchivesController#index as HTML
+  Rendering archives/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/archives/index.html.erb:3
+  Rendered archives/index.html.erb within layouts/application (1.9ms)
+  Rendered shared/_header.html.erb (0.8ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2021-02-12 15:23:25 +0300
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:8
+  Rendered entries/index.html.erb within layouts/application (2.1ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2021-02-12 15:23:59 +0300
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:8
+  Rendered entries/index.html.erb within layouts/application (3.7ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2021-02-12 15:25:11 +0300
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:8
+  Rendered entries/index.html.erb within layouts/application (8.5ms)
+  Rendered shared/_header.html.erb (1.8ms)
+Completed 200 OK in 79ms (Views: 76.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-02-16 09:42:04 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/web_console/middleware.rb:135
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:8
+  Rendered entries/index.html.erb within layouts/application (17.2ms)
+  Rendered shared/_header.html.erb (0.8ms)
+Completed 200 OK in 235ms (Views: 222.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/entries/3" for 127.0.0.1 at 2021-02-16 09:42:08 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (1.6ms)
+  Rendered shared/_header.html.erb (0.8ms)
+Completed 200 OK in 32ms (Views: 24.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entries/3/edit" for 127.0.0.1 at 2021-02-16 09:42:11 +0300
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/edit.html.erb within layouts/application
+  Rendered entries/_form.html.erb (11.8ms)
+  Rendered entries/edit.html.erb within layouts/application (13.6ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 38ms (Views: 33.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/entries/3/edit" for 127.0.0.1 at 2021-02-16 09:42:16 +0300
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/edit.html.erb within layouts/application
+  Rendered entries/_form.html.erb (5.6ms)
+  Rendered entries/edit.html.erb within layouts/application (7.3ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 34ms (Views: 29.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/archives" for 127.0.0.1 at 2021-02-16 09:44:48 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/archives"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:135:in `call_app'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:30:in `block in call'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:20:in `catch'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+/usr/lib/ruby/vendor_ruby/rack/method_override.rb:22:in `call'
+/usr/lib/ruby/vendor_ruby/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+/usr/lib/ruby/vendor_ruby/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+/usr/lib/ruby/vendor_ruby/puma/configuration.rb:227:in `call'
+/usr/lib/ruby/vendor_ruby/puma/server.rb:675:in `handle_request'
+/usr/lib/ruby/vendor_ruby/puma/server.rb:476:in `process_client'
+/usr/lib/ruby/vendor_ruby/puma/server.rb:334:in `block in run'
+/usr/lib/ruby/vendor_ruby/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rails/info/routes" for 127.0.0.1 at 2021-02-16 09:45:39 +0300
+Processing by Rails::InfoController#routes as HTML
+  Rendering /usr/share/rubygems-integration/all/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/share/rubygems-integration/all/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (3.4ms)
+  Rendered /usr/share/rubygems-integration/all/gems/actionpack-5.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /usr/share/rubygems-integration/all/gems/railties-5.2.3/lib/rails/templates/rails/info/routes.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/archives" for 127.0.0.1 at 2021-02-16 09:45:47 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/archives"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:135:in `call_app'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:30:in `block in call'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:20:in `catch'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+/usr/lib/ruby/vendor_ruby/rack/method_override.rb:22:in `call'
+/usr/lib/ruby/vendor_ruby/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+/usr/lib/ruby/vendor_ruby/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+/usr/lib/ruby/vendor_ruby/puma/configuration.rb:227:in `call'
+/usr/lib/ruby/vendor_ruby/puma/server.rb:675:in `handle_request'
+/usr/lib/ruby/vendor_ruby/puma/server.rb:476:in `process_client'
+/usr/lib/ruby/vendor_ruby/puma/server.rb:334:in `block in run'
+/usr/lib/ruby/vendor_ruby/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-16 09:45:53 +0300
+Processing by ArchivesController#index as HTML
+  Rendering archives/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/archives/index.html.erb:3
+  Rendered archives/index.html.erb within layouts/application (2.0ms)
+  Rendered shared/_header.html.erb (1.2ms)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/archives1/index" for 127.0.0.1 at 2021-02-16 09:46:19 +0300
+  
+ActionController::RoutingError (uninitialized constant Archives1Controller):
+  
+/usr/lib/ruby/vendor_ruby/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
+/usr/lib/ruby/vendor_ruby/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
+/usr/lib/ruby/vendor_ruby/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
+/usr/lib/ruby/vendor_ruby/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+/usr/lib/ruby/vendor_ruby/rack/tempfile_reaper.rb:15:in `call'
+/usr/lib/ruby/vendor_ruby/rack/etag.rb:25:in `call'
+/usr/lib/ruby/vendor_ruby/rack/conditional_get.rb:25:in `call'
+/usr/lib/ruby/vendor_ruby/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+/usr/lib/ruby/vendor_ruby/rack/session/abstract/id.rb:232:in `context'
+/usr/lib/ruby/vendor_ruby/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:135:in `call_app'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:30:in `block in call'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:20:in `catch'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+/usr/lib/ruby/vendor_ruby/rack/method_override.rb:22:in `call'
+/usr/lib/ruby/vendor_ruby/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+/usr/lib/ruby/vendor_ruby/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+/usr/lib/ruby/vendor_ruby/puma/configuration.rb:227:in `call'
+/usr/lib/ruby/vendor_ruby/puma/server.rb:675:in `handle_request'
+/usr/lib/ruby/vendor_ruby/puma/server.rb:476:in `process_client'
+/usr/lib/ruby/vendor_ruby/puma/server.rb:334:in `block in run'
+/usr/lib/ruby/vendor_ruby/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-02-16 11:43:47 +0300
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:8
+  Rendered entries/index.html.erb within layouts/application (11.8ms)
+  Rendered shared/_header.html.erb (0.7ms)
+Completed 200 OK in 37ms (Views: 32.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/entries/3" for 127.0.0.1 at 2021-02-16 11:43:50 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (2.7ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 41ms (Views: 31.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entries/3/edit" for 127.0.0.1 at 2021-02-16 11:43:51 +0300
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/edit.html.erb within layouts/application
+  Rendered entries/_form.html.erb (6.0ms)
+  Rendered entries/edit.html.erb within layouts/application (7.9ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 54ms (Views: 49.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/archives" for 127.0.0.1 at 2021-02-16 11:43:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/archives"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:135:in `call_app'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:30:in `block in call'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:20:in `catch'
+/usr/lib/ruby/vendor_ruby/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+/usr/lib/ruby/vendor_ruby/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+/usr/lib/ruby/vendor_ruby/rack/method_override.rb:22:in `call'
+/usr/lib/ruby/vendor_ruby/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+/usr/lib/ruby/vendor_ruby/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+/usr/lib/ruby/vendor_ruby/puma/configuration.rb:227:in `call'
+/usr/lib/ruby/vendor_ruby/puma/server.rb:675:in `handle_request'
+/usr/lib/ruby/vendor_ruby/puma/server.rb:476:in `process_client'
+/usr/lib/ruby/vendor_ruby/puma/server.rb:334:in `block in run'
+/usr/lib/ruby/vendor_ruby/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-16 11:44:02 +0300
+Processing by ArchivesController#index as HTML
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/archives_controller.rb:3
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `time' for #<Entry:0x00007f85703d0890>
+Did you mean?  timeout):
+  
+app/models/entry.rb:4:in `day'
+app/controllers/archives_controller.rb:3:in `group_by'
+app/controllers/archives_controller.rb:3:in `index'
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-16 11:44:49 +0300
+Processing by ArchivesController#index as HTML
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/archives_controller.rb:3
+  Rendering archives/index.html.erb within layouts/application
+  Rendered archives/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/home/saudi/Desktop/Projects/foodLog-ruby/app/views/archives/index.html.erb:28: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/views/archives/index.html.erb:28: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-16 11:45:35 +0300
+Processing by ArchivesController#index as HTML
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/archives_controller.rb:3
+  Rendering archives/index.html.erb within layouts/application
+  Rendered archives/index.html.erb within layouts/application (111.6ms)
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `day' for #<#<Class:0x00007f8579d9ae08>:0x00007f857887fe10>):
+    1: <div class="columns is-centered mt-6">
+    2: <div class="column is-half">
+    3:     <% @entries.each do |entry| %>
+    4:     <h3 class="is-size-4 has-text-weight-bold mb-4 has-text-centered">Entries for <%= day %></h3>
+    5:    
+    6:    <% entries.each do |entry|%>
+    7:    <%= link_to entry_path(entry) do%>
+  
+app/views/archives/index.html.erb:4:in `block in _app_views_archives_index_html_erb__4088946213744508831_25700'
+app/views/archives/index.html.erb:3:in `each'
+app/views/archives/index.html.erb:3:in `_app_views_archives_index_html_erb__4088946213744508831_25700'
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-16 11:45:57 +0300
+Processing by ArchivesController#index as HTML
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/archives_controller.rb:3
+  Rendering archives/index.html.erb within layouts/application
+  Rendered archives/index.html.erb within layouts/application (118.1ms)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `entries' for #<#<Class:0x00007f8579d9ae08>:0x00007f857003b428>
+Did you mean?  @entries):
+    3:     <% @entries.each do |day, entry| %>
+    4:     <h3 class="is-size-4 has-text-weight-bold mb-4 has-text-centered">Entries for <%= day %></h3>
+    5:    
+    6:    <% entries.each do |entry|%>
+    7:    <%= link_to entry_path(entry) do%>
+    8:    <div class="card">
+    9:     <div class="card-content">
+  
+app/views/archives/index.html.erb:6:in `block in _app_views_archives_index_html_erb__4088946213744508831_26320'
+app/views/archives/index.html.erb:3:in `each'
+app/views/archives/index.html.erb:3:in `_app_views_archives_index_html_erb__4088946213744508831_26320'
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-16 11:46:15 +0300
+Processing by ArchivesController#index as HTML
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/archives_controller.rb:3
+  Rendering archives/index.html.erb within layouts/application
+  Rendered archives/index.html.erb within layouts/application (0.9ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/entries/3" for 127.0.0.1 at 2021-02-16 11:48:59 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (1.2ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-16 11:49:49 +0300
+Processing by ArchivesController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/archives_controller.rb:3:in `group_by'
+app/controllers/archives_controller.rb:3:in `index'
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-16 11:49:53 +0300
+Processing by ArchivesController#index as HTML
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/archives_controller.rb:3
+  Rendering archives/index.html.erb within layouts/application
+  Rendered archives/index.html.erb within layouts/application (1.0ms)
+  Rendered shared/_header.html.erb (0.4ms)
+Completed 200 OK in 33ms (Views: 23.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-16 11:53:40 +0300
+Processing by ArchivesController#index as HTML
+  [1m[36mEntry Load (0.2ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/archives_controller.rb:3
+  Rendering archives/index.html.erb within layouts/application
+  Rendered archives/index.html.erb within layouts/application (1.1ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-16 11:54:09 +0300
+Processing by ArchivesController#index as HTML
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/archives_controller.rb:3
+  Rendering archives/index.html.erb within layouts/application
+  Rendered archives/index.html.erb within layouts/application (2.0ms)
+  Rendered shared/_header.html.erb (0.9ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-16 11:54:32 +0300
+Processing by ArchivesController#index as HTML
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/archives_controller.rb:3
+  Rendering archives/index.html.erb within layouts/application
+  Rendered archives/index.html.erb within layouts/application (2.2ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 24.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2021-02-16 11:54:41 +0300
+Processing by EntriesController#new as HTML
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/_form.html.erb (4.2ms)
+  Rendered entries/new.html.erb within layouts/application (5.0ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 24ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/entries" for 127.0.0.1 at 2021-02-16 11:54:58 +0300
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p7duyXxZCkMXV+4CHEqabI0NAtvYf6hG2fiMMpWPkQGRhHWjEyvPcvwfOeAck1qtWOmqasggY8KkSkP/mfVxgg==", "entry"=>{"meal_type"=>"Lunch ", "calories"=>"420", "proteins"=>"197", "carbohydrates"=>"88", "fats"=>"64"}, "commit"=>"Create Entry"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:30
+  [1m[36mEntry Create (0.7ms)[0m  [1m[32mINSERT INTO "entries" ("meal_type", "calories", "proteins", "carbohydrates", "fats", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["meal_type", "Lunch "], ["calories", 420], ["proteins", 197], ["carbohydrates", 88], ["fats", 64], ["created_at", "2021-02-16 08:54:58.597086"], ["updated_at", "2021-02-16 08:54:58.597086"]]
+  ↳ app/controllers/entries_controller.rb:30
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:30
+Redirected to http://localhost:3000/entries/4
+Completed 302 Found in 21ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/entries/4" for 127.0.0.1 at 2021-02-16 11:54:58 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (0.8ms)
+  Rendered shared/_header.html.erb (0.5ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/entries/new" for 127.0.0.1 at 2021-02-16 11:55:01 +0300
+Processing by EntriesController#new as HTML
+  Rendering entries/new.html.erb within layouts/application
+  Rendered entries/_form.html.erb (5.0ms)
+  Rendered entries/new.html.erb within layouts/application (6.7ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/entries" for 127.0.0.1 at 2021-02-16 11:55:14 +0300
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9kjdEska2XpIi8t0f6VQlRLLVKsyTFzSjzq+X1SsOsLAe8Z4pmgcS6PDHJZ/fJBUxy/8GiITl1byiHGSWNbaQQ==", "entry"=>{"meal_type"=>"Breakfast", "calories"=>"113", "proteins"=>"53", "carbohydrates"=>"23", "fats"=>"22"}, "commit"=>"Create Entry"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/entries_controller.rb:30
+  [1m[36mEntry Create (0.8ms)[0m  [1m[32mINSERT INTO "entries" ("meal_type", "calories", "proteins", "carbohydrates", "fats", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["meal_type", "Breakfast"], ["calories", 113], ["proteins", 53], ["carbohydrates", 23], ["fats", 22], ["created_at", "2021-02-16 08:55:14.297961"], ["updated_at", "2021-02-16 08:55:14.297961"]]
+  ↳ app/controllers/entries_controller.rb:30
+  [1m[35m (18.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/entries_controller.rb:30
+Redirected to http://localhost:3000/entries/5
+Completed 302 Found in 31ms (ActiveRecord: 19.7ms)
+
+
+Started GET "/entries/5" for 127.0.0.1 at 2021-02-16 11:55:14 +0300
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/entries_controller.rb:67
+  Rendering entries/show.html.erb within layouts/application
+  Rendered entries/show.html.erb within layouts/application (1.4ms)
+  Rendered shared/_header.html.erb (0.8ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-02-16 11:55:19 +0300
+Processing by EntriesController#index as HTML
+  Rendering entries/index.html.erb within layouts/application
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/views/entries/index.html.erb:8
+  Rendered entries/index.html.erb within layouts/application (7.7ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-16 11:55:22 +0300
+Processing by ArchivesController#index as HTML
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/archives_controller.rb:3
+  Rendering archives/index.html.erb within layouts/application
+  Rendered archives/index.html.erb within layouts/application (1.6ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/archives/index" for 127.0.0.1 at 2021-02-16 11:56:52 +0300
+Processing by ArchivesController#index as HTML
+  [1m[36mEntry Load (0.1ms)[0m  [1m[34mSELECT "entries".* FROM "entries"[0m
+  ↳ app/controllers/archives_controller.rb:3
+  Rendering archives/index.html.erb within layouts/application
+  Rendered archives/index.html.erb within layouts/application (1.5ms)
+  Rendered shared/_header.html.erb (0.6ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.1ms)
+
+
